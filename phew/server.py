@@ -287,7 +287,7 @@ async def _handle_request(reader, writer):
     # file
     with open(response.file, "rb") as f:
       while True:
-        chunk = f.read(1024)
+        chunk = f.read(32)
         if not chunk:
           break
         writer.write(chunk)
